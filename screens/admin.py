@@ -4,7 +4,8 @@ from .models import Location, Screen
 
 
 class LocationAdmin(admin.ModelAdmin):
-    list_display = ('name', )
+    list_display = ('name', 'slug')
+    prepopulated_fields = {"slug": ("name",)}
 
 
 class ScreenAdmin(admin.ModelAdmin):
