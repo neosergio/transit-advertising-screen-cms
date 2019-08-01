@@ -23,7 +23,7 @@ class Screen(models.Model):
     modified_at = models.DateTimeField(auto_now=True)
 
     class Meta(object):
-        ordering = ['-modified_at', '-created_at']
+        ordering = ['priority', '-modified_at', '-created_at']
 
     def __str__(self):
         return self.text
