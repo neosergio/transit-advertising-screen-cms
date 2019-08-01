@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>Locations</h1>
+<div>
+    <ul>
+        {% for record in locations %}
+        <li><a href="">{{ record.name }}</a></li>
+        {% empty %}
+        <li>No locations found.</li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock content %}
