@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block content %}
+<p>current_resource: {{ screen.url }}</p>
+<p>current_text: {{ screen.text }}</p>
+<p>seconds: {{ screen.seconds }}</p>
+<p>next_url: <a href="{{request.path}}?index={{next_index}}">{{request.path}}?index='{{next_index}}'</a></p>
+{% endblock content %}

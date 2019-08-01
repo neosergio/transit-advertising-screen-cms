@@ -4,7 +4,7 @@
 <div>
     <ul>
         {% for record in locations %}
-        <li><a href="">{{ record.name }}</a></li>
+        <li><a href="screens/{{record.slug}}">{{ record.name }}</a></li>
         {% empty %}
         <li>No locations found.</li>
         {% endfor %}

@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from screens.views import index
+from screens.views import index, get_screens_by_location
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
+    path('screens/<slug:slug>/', get_screens_by_location, name='screens')
 ]
