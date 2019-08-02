@@ -11,6 +11,7 @@ def index(request):
 def get_screens_by_location(request, slug):
     location = get_object_or_404(Location, slug=slug)
     screens = get_list_or_404(Screen, location=location, is_active=True)
+    screen = None
 
     if request.GET.get('index'):
         index = int(request.GET.get('index'))
@@ -24,6 +25,16 @@ def get_screens_by_location(request, slug):
         context = {'screen': screen,
                    'next_index': next_index}
     else:
-        context = {'screen': screens[0],
+        screen = screens[0]
+        context = {'screen': screen,
                    'next_index': 1}
+
+    if context:
+        if screen.url[-4] == ".":
+            type = 'image'
+        else:
+            type = 'video'
+
+        context['type'] = type
+
     return render(request, 'screens.html', context)
