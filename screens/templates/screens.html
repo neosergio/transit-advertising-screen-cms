@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
+{% load mathfilters %}
 {% block content %}
-<p>current_resource: {{ screen.url }}</p>
-<p>current_text: {{ screen.text }}</p>
-<p>seconds: {{ screen.seconds }}</p>
-<p>next_url: <a href="{{request.path}}?index={{next_index}}">{{request.path}}?index='{{next_index}}'</a></p>
+<div id="media-content">
+    <img src="{{ screen.url }}">
+</div>
+<script>
+     setTimeout(function(){
+        window.location.href = "{{request.path}}?index={{next_index}}";
+     }, {{ screen.seconds|mul:1000 }});
+</script>
 {% endblock content %}
