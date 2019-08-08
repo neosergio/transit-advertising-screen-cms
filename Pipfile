@@ -9,6 +9,8 @@ verify_ssl = true
 django = "==2.2.4"
 flake8 = "*"
 django-mathfilters = "*"
+django-heroku = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.7"

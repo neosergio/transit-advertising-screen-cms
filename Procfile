@@ -1,0 +1,1 @@
+web: gunicorn TransitAdScreen.wsgi --log-file -
