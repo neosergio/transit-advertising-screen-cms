@@ -9,7 +9,17 @@ class LocationAdmin(admin.ModelAdmin):
 
 
 class ScreenAdmin(admin.ModelAdmin):
-    list_display = ('url', 'is_active', 'location', 'priority', 'seconds', 'text', 'created_at', 'modified_at')
+    list_display = (
+        'url',
+        'is_active',
+        'location',
+        'priority',
+        'seconds',
+        'created_at',
+        'modified_at',
+        'start_date',
+        'due_date'
+    )
     search_fields = ['text', 'location', 'url']
 
 

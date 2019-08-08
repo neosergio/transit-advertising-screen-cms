@@ -1,4 +1,6 @@
+from datetime import timedelta
 from django.db import models
+from django.utils.timezone import now
 
 
 class Location(models.Model):
@@ -21,6 +23,8 @@ class Screen(models.Model):
     text = models.CharField(max_length=100)
     created_at = models.DateTimeField(auto_now_add=True)
     modified_at = models.DateTimeField(auto_now=True)
+    start_date = models.DateTimeField(default=now)
+    due_date = models.DateTimeField(default=now)
 
     class Meta(object):
         ordering = ['priority', '-modified_at', '-created_at']

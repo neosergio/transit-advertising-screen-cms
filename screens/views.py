@@ -1,4 +1,5 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
+from django.utils.timezone import now
 from .models import Location, Screen
 
 
@@ -10,7 +11,12 @@ def index(request):
 
 def get_screens_by_location(request, slug):
     location = get_object_or_404(Location, slug=slug)
-    screens = get_list_or_404(Screen, location=location, is_active=True)
+    current_datetime = now()
+    screens = get_list_or_404(Screen,
+                              location=location,
+                              is_active=True,
+                              start_date__lte=current_datetime,
+                              due_date__gte=current_datetime)
     screen = None
 
     if request.GET.get('index'):
