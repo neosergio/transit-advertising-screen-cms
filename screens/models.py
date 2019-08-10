@@ -17,7 +17,7 @@ class Location(models.Model):
 class Screen(models.Model):
     url = models.URLField(unique=True)
     is_active = models.BooleanField(default=True)
-    location = models.ForeignKey(Location, on_delete=models.CASCADE)
+    location = models.ManyToManyField(Location)
     priority = models.PositiveSmallIntegerField(default=0)
     seconds = models.PositiveSmallIntegerField(default=60)
     text = models.CharField(max_length=100)

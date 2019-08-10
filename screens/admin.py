@@ -10,17 +10,15 @@ class LocationAdmin(admin.ModelAdmin):
 
 class ScreenAdmin(admin.ModelAdmin):
     list_display = (
+        'text',
         'url',
         'is_active',
-        'location',
-        'priority',
         'seconds',
-        'created_at',
-        'modified_at',
         'start_date',
         'due_date'
     )
     search_fields = ['text', 'location', 'url']
+    readonly_fields = ('created_at', 'modified_at')
 
 
 admin.site.register(Location, LocationAdmin)
