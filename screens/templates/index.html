@@ -2,12 +2,22 @@
 {% block content %}
 <h1>Locations</h1>
 <div>
-    <ul>
-        {% for record in locations %}
-        <li><a href="screens/{{record.slug}}">{{ record.name }}</a></li>
-        {% empty %}
-        <li>No locations found.</li>
-        {% endfor %}
-    </ul>
+    <h2>Regular computers screens</h2>
+        <ul>
+            {% for record in locations %}
+            <li><a href="screens/{{record.slug}}">{{ record.name }}</a></li>
+            {% empty %}
+            <li>No locations found.</li>
+            {% endfor %}
+        </ul>
+    <h2>TV screens</h2>
+        <ul>
+            {% for record in locations %}
+            <li><a href="screens/{{record.slug}}/?tv=true">{{ record.name }}</a></li
+            >
+            {% empty %}
+            <li>No locations found.</li>
+            {% endfor %}
+        </ul>
 </div>
 {% endblock content %}

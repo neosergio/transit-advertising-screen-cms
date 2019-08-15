@@ -43,4 +43,7 @@ def get_screens_by_location(request, slug):
 
         context['type'] = type
 
+    if request.GET.get('tv') and request.GET.get('tv') == "true":
+        return render(request, 'tv.html', context)
+
     return render(request, 'screens.html', context)
