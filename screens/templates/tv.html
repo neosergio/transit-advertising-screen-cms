@@ -21,7 +21,7 @@
 {% block content %}
 <script>
      setTimeout(function(){
-        window.location.href = "{{request.path}}?index={{next_index}}";
+        window.location.href = "{{request.path}}?index={{next_index}}&tv=true";
      }, {{ screen.seconds|mul:1000 }});
 </script>
 <div id="media-content">
