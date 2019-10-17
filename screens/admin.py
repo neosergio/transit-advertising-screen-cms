@@ -10,14 +10,13 @@ class LocationAdmin(admin.ModelAdmin):
 
 class ScreenAdmin(admin.ModelAdmin):
     list_display = (
-        'text',
-        'url',
+        'file_name',
         'is_active',
         'seconds',
         'start_date',
         'due_date'
     )
-    search_fields = ['text', 'location', 'url']
+    search_fields = ['file_name', 'location']
     readonly_fields = ('created_at', 'modified_at')
 
 
