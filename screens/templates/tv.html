@@ -27,7 +27,7 @@
 <div id="media-content">
 
     {% if type == 'image' %}
-        <img src="{{ screen.url }}">
+        <img src="{{ image_server }}{{ screen.file_name }}">
     {% endif %}
 
     {% if type == 'video' %}
