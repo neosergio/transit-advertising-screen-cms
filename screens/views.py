@@ -36,10 +36,10 @@ def get_screens_by_location(request, slug):
                    'next_index': 1}
 
     if context:
-        if screen.url[-4] == ".":
-            type = 'image'
-        else:
+        if screen.is_video:
             type = 'video'
+        else:
+            type = 'image'
 
         context['type'] = type
 

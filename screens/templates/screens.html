@@ -30,12 +30,12 @@
 <div id="media-content">
 
     {% if type == 'image' %}
-        <img src="{{ screen.url }}">
+        <img src="{{ screen.file_name }}">
     {% endif %}
 
     {% if type == 'video' %}
     <iframe id="ytplayer" type="text/html" width="1080" height="720"
-    src="{{ screen.url }}?autoplay=1&mute=1" frameborder="0" allowfullscreen>
+    src="{{ screen.video_url }}?autoplay=1&mute=1&rel=0" frameborder="0" allowfullscreen>
     {% endif %}
 
 </div>

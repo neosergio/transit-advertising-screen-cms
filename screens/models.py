@@ -25,6 +25,7 @@ class Screen(models.Model):
     modified_at = models.DateTimeField(auto_now=True)
     start_date = models.DateTimeField(default=now)
     due_date = models.DateTimeField(default=now)
+    is_video = models.BooleanField(default=False)
 
     class Meta(object):
         ordering = ['priority', '-modified_at', '-created_at']
