@@ -1,5 +1,8 @@
 from django.shortcuts import render, get_list_or_404, get_object_or_404
 from django.utils.timezone import now
+
+from constance import config
+
 from .models import Location, Screen
 
 
@@ -42,6 +45,7 @@ def get_screens_by_location(request, slug):
             type = 'image'
 
         context['type'] = type
+        context['image_server'] = config.IMAGE_SERVER_URL
 
     if request.GET.get('tv') and request.GET.get('tv') == "true":
         return render(request, 'tv.html', context)

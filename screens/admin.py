@@ -1,5 +1,7 @@
 from django.contrib import admin
 
+from import_export.admin import ImportExportMixin
+
 from .models import Location, Screen
 
 
@@ -8,7 +10,7 @@ class LocationAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("name",)}
 
 
-class ScreenAdmin(admin.ModelAdmin):
+class ScreenAdmin(ImportExportMixin, admin.ModelAdmin):
     list_display = (
         'file_name',
         'is_active',

@@ -11,6 +11,8 @@ flake8 = "*"
 django-mathfilters = "*"
 django-heroku = "*"
 gunicorn = "*"
+django-constance = {extras = ["database"],version = "*"}
+django-import-export = "*"
 
 [requires]
 python_version = "3.7"

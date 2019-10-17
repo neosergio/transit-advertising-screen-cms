@@ -26,6 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'screens.apps.ScreensConfig',
+    'constance',
+    'constance.backends.database',
+    'import_export',
     'mathfilters',
 ]
 
@@ -105,3 +108,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Constance
+CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+CONSTANCE_CONFIG = {
+    'IMAGE_SERVER_URL': ('https://images.servername.com/', 'Image server URL', str),
+}
